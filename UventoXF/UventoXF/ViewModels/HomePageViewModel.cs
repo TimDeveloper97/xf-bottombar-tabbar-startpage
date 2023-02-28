@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
 using UventoXF.Helpers;
 using UventoXF.Models;
 using UventoXF.ViewModel;
@@ -8,11 +10,10 @@ using Xamarin.Forms;
 
 namespace UventoXF.ViewModels
 {
-    public class MainPageViewModel : BaseViewModel
+    public class HomePageViewModel : BaseViewModel
     {
-        public MainPageViewModel(INavigation navigation, DateItem date)
+        public HomePageViewModel(INavigation navigation)
         {
-            var x = date;
             Navigation = navigation;
             EventTypes = new ObservableCollection<EventType>();
             EventItems = new ObservableCollection<EventItem>();

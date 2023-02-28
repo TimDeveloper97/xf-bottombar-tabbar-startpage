@@ -9,7 +9,7 @@
 
     <Grid
         HorizontalOptions="FillAndExpand"
-        RowDefinitions="*, auto"
+        RowDefinitions="auto, *,auto"
         RowSpacing="0"
         VerticalOptions="FillAndExpand">
         <ScrollView Grid.Row="0">
@@ -37,11 +37,11 @@
                                 <Span
                                     FontFamily="MuliBlack"
                                     FontSize="20"
-                                    Text="UVE" />
+                                    Text="UVE000" />
                                 <Span
                                     FontFamily="MuliBlack"
                                     FontSize="20"
-                                    Text="NTO"
+                                    Text="NTO000"
                                     TextColor="#FFA700" />
                             </FormattedString>
                         </Label.FormattedText>
@@ -63,7 +63,7 @@
                     HeightRequest="20"
                     Source="menu"
                     WidthRequest="20" />
-                <Grid
+                <!--<Grid
                     Grid.Row="1"
                     Grid.ColumnSpan="3"
                     Margin="20,20,20,0"
@@ -112,9 +112,12 @@
                     Grid.Row="4"
                     Grid.ColumnSpan="3"
                     Margin="20,0"
-                    VerticalOptions="Start" />
+                    VerticalOptions="Start" />-->
             </Grid>
         </ScrollView>
+
+        <ContentPresenter Grid.Row="1" x:Name="content"></ContentPresenter>
+        
         <Grid
             x:Name="gridFrames"
             Grid.Row="1"

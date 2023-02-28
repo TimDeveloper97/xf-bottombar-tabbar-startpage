@@ -1,4 +1,5 @@
-﻿using UventoXF.ViewModels;
+﻿using UventoXF.Models;
+using UventoXF.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,10 +8,10 @@ namespace UventoXF.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public MainPage(DateItem date)
         {
             InitializeComponent();
-            BindingContext = new MainPageViewModel(Navigation);
+            BindingContext = new MainPageViewModel(Navigation, date);
             SetLayoutFrame();
             
         }
@@ -39,6 +40,8 @@ namespace UventoXF.Views
                     lbFavorite.IsVisible = false;
                     lbFavorite.TextColor = Color.White;
                     lbIconFavorite.TextColor = Color.White;
+
+                    this.content.Content = new HomePage();
                 }
                 else if (sender is Frame frmSearch && frmSearch.StyleId.Equals("frameSearch"))
                 {
@@ -60,6 +63,8 @@ namespace UventoXF.Views
                     lbFavorite.IsVisible = false;
                     lbFavorite.TextColor = Color.White;
                     lbIconFavorite.TextColor = Color.White;
+
+                    this.content.Content = new SearchPage();
                 }
                 else if (sender is Frame frmFavorite && frmFavorite.StyleId.Equals("frameFavorite"))
                 {
@@ -81,6 +86,8 @@ namespace UventoXF.Views
                     lbFavorite.IsVisible = true;
                     lbFavorite.TextColor = Color.FromHex("#FFA700");
                     lbIconFavorite.TextColor = Color.FromHex("#FFA700");
+
+                    this.content.Content = new SettingPage("string");
                 }
             });
         }
@@ -103,6 +110,8 @@ namespace UventoXF.Views
             lbFavorite.IsVisible = false;
             lbFavorite.TextColor = Color.White;
             lbIconFavorite.TextColor = Color.White;
+
+            Device.BeginInvokeOnMainThread(() => this.content.Content = new HomePage());
         }
     }
 }

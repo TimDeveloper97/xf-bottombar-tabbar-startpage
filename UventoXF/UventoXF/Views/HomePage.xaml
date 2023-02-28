@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:UventoXF.Controls"
+             xmlns:fonticons="clr-namespace:UventoXF.FontIcons"
+             x:Class="UventoXF.Views.HomePage">
+    <ContentView.Content>
+        <Grid
+        HorizontalOptions="FillAndExpand"
+        RowDefinitions="*, auto"
+        RowSpacing="0"
+        VerticalOptions="FillAndExpand">
+            <ScrollView Grid.Row="0">
+                <Grid
+                ColumnDefinitions="*, auto, auto"
+                ColumnSpacing="0"
+                HorizontalOptions="FillAndExpand"
+                RowDefinitions="auto, auto, auto, auto, *"
+                VerticalOptions="FillAndExpand">
+
+                    <!--#region Title-->
+                    <StackLayout
+                    Grid.Row="0"
+                    Margin="20,30,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                        <Image
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Aspect="AspectFit"
+                        HeightRequest="24"
+                        Source="logo"
+                        WidthRequest="24" />
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span
+                                    FontFamily="MuliBlack"
+                                    FontSize="20"
+                                    Text="UVE111" />
+                                    <Span
+                                    FontFamily="MuliBlack"
+                                    FontSize="20"
+                                    Text="NTO111"
+                                    TextColor="#FFA700" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <!--#endregion-->
+
+                    <!--#region tab bar-->
+                    <Image
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="0,30,20,0"
+                    Aspect="AspectFit"
+                    HeightRequest="20"
+                    Source="notification"
+                    WidthRequest="20" />
+                    <Image
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="0,30,20,0"
+                    Aspect="AspectFit"
+                    HeightRequest="20"
+                    Source="menu"
+                    WidthRequest="20" />
+                    <!--#endregion-->
+
+                    <!--#region Hello-->
+                    <Grid
+                    Grid.Row="1"
+                    Grid.ColumnSpan="3"
+                    Margin="20,20,20,0"
+                    ColumnDefinitions="*, auto"
+                    RowDefinitions="auto, auto">
+                        <Label
+                        Grid.Row="0"
+                        FontFamily="MuliBlack"
+                        FontSize="20"
+                        Text="Hello, Geralt!" />
+                        <Label
+                        Grid.Row="1"
+                        FontFamily="MuliBold"
+                        FontSize="14"
+                        Text="Let's explore what's happening nearby" />
+                        <BoxView
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        BackgroundColor="#FAE072"
+                        CornerRadius="27"
+                        HeightRequest="54"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="54" />
+                        <Image
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        Aspect="AspectFit"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        Source="avatar"
+                        VerticalOptions="Center" />
+                    </Grid>
+                    <!--#endregion-->
+
+
+                    <control:CalendarCarouselView
+                    x:Name="calendarView"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    Margin="20,15,20,0"/>
+                    <!--ItemsSource="{Binding Dates}" />-->
+                    <control:ListEventTypesView
+                    Grid.Row="3"
+                    Grid.ColumnSpan="3"
+                    Margin="20,15,0,0"
+                    VerticalOptions="Start" />
+                    <control:ListEventsView
+                    Grid.Row="4"
+                    Grid.ColumnSpan="3"
+                    Margin="20,0"
+                    VerticalOptions="Start" />
+                </Grid>
+            </ScrollView>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

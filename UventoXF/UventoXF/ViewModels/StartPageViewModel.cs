@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using UventoXF.Models;
 using UventoXF.ViewModel;
 using UventoXF.Views;
 using Xamarin.Forms;
@@ -18,7 +19,8 @@ namespace UventoXF.ViewModels
 
         private async Task ExecuteNavigateToMainPageCommand()
         {
-            await Navigation.PushAsync(new MainPage());
+            var data = new DateItem { Title = "Title", dayWeek = "1" };
+            await Navigation.PushAsync(new MainPage(data));
         }
     }
 }

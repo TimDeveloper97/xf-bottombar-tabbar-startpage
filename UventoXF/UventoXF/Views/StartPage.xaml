@@ -31,7 +31,7 @@
                         <Span
                             FontFamily="MuliBlack"
                             FontSize="30"
-                            Text="NTO"
+                            Text="NTO222"
                             TextColor="#FFA700" />
                     </FormattedString>
                 </Label.FormattedText>
